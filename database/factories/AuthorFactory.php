@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BookFactory extends Factory
+class AuthorFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +14,8 @@ class BookFactory extends Factory
     public function definition()
     {
         return [
-            'title'     => $this->faker->sentence,
-            'author_id' => Author::factory(),
+            'name' => $this->faker->name,
+            'dob' => now()->subYears(rand(1, 5)),
         ];
     }
 }
